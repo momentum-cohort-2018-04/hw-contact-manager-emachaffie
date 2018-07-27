@@ -49,7 +49,7 @@ class AddContact extends Component {
       title: this.state.title
     }
     newContactList.push(newContact)
-    this.props.notAddingContact()
+    this.props.history.push('/Contacts')
   }
 
   // Example from site 

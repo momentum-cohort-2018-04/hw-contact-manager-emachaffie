@@ -20,7 +20,7 @@ class Dashboard extends Component {
       user: firebase.auth().currentUser
     }
     this.changeLoggedInStatus = this.changeLoggedInStatus.bind(this)
-    this.notAddingContact = this.notAddingContact.bind(this)
+    // this.notAddingContact = this.notAddingContact.bind(this)
     this.addingContactFn = this.addingContactFn.bind(this)
   }
 
@@ -42,11 +42,6 @@ class Dashboard extends Component {
     console.log('addingContact to true')
   }
 
-  notAddingContact () {
-    this.setState({addingContact: false})
-    console.log('addingContact to false')
-  }
-
   render () {
     if (!this.state.loggedIn) {
       var provider = new firebase.auth.GoogleAuthProvider()
@@ -54,7 +49,7 @@ class Dashboard extends Component {
         firebase.auth().signInWithRedirect(provider))
     } else if (this.state.addingContact) {
       return (
-        <AddContact notAddingContact={this.notAddingContact.bind(this)} />)
+        <AddContact />)
     } else {
       return (
         <Contacts password={this.state.password} username={this.state.username} addingContactFn={this.addingContactFn.bind(this)} />)
