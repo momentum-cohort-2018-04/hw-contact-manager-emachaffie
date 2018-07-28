@@ -14,12 +14,28 @@ class AddContact extends Component {
     this.state = {
       id: '',
       name: '',
+      nameError: '',
       email: '',
+      nameError: '',
       address: '',
+      addressError: '',
       house: null,
+      houseError: '',
       birthday: null,
+      birthdayError: '',
       company: '',
-      title: ''
+      companyError: '',
+      title: '',
+      titleError: '',
+      nameValid: false,
+      emailValid: false,
+      addressValid: false,
+      houseValid: false,
+      birthdayValid: false,
+      companyValid: false,
+      titleValid: false,
+      formValid: false
+      // formErrors: {name: '', email: '', address: '', house: '', birthday: '', company: '', title: ''}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -67,9 +83,9 @@ class AddContact extends Component {
         <h2 className='header'>Add a Contact</h2>
         <p>Muggles and those who have not passed Year 3 Incantations, please fill out this form. Otherwise, you may use the <em>'addendum contacto'</em> spell.</p>
         <form className='addContactForm' type='submit' onSubmit={this.handleSubmit}>
-        Name: <input type='text' name='name' onChange={this.handleChange} />
-        Email: <input type='text' name='email' onChange={this.handleChange} />
-        Address: <input type='text' name='address' onChange={this.handleChange} />
+        Name: <input type='text' name='name' errorText={this.state.nameError} onChange={this.handleChange} />
+        Email: <input type='text' name='email' errorText={this.state.emailError} onChange={this.handleChange} />
+        Address: <input type='text' name='address' errorText={this.state.addressError} onChange={this.handleChange} />
         Hogwarts House:
           <select name='house' onChange={this.handleChange}>
             <option value='None'>No House</option>
@@ -77,10 +93,11 @@ class AddContact extends Component {
             <option value='Hufflepuff'>Hufflepuff</option>
             <option value='Ravenclaw'>Ravenclaw</option>
             <option value='Slytherin'>Slytherin</option>
+            errorText={this.state.houseError}
           </select>
-        Birthday: <input type='text' name='birthday' onChange={this.handleChange} />
-        Organization: <input type='text' name='company' onChange={this.handleChange} />
-        Job Title: <input type='text' name='title' onChange={this.handleChange} />
+        Birthday: <input type='text' name='birthday' errorText={this.state.birthdayError} onChange={this.handleChange} />
+        Organization: <input type='text' name='company' errorText={this.state.companyError} onChange={this.handleChange} />
+        Job Title: <input type='text' name='title' errorText={this.state.titleError} onChange={this.handleChange} />
           <button className='submitButton' type='submit'>Submit</button>
           <button className='cancelButton' onClick={this.props.notAddingContact}>Cancel</button>
         </form>

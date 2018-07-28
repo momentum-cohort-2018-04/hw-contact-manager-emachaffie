@@ -20,7 +20,6 @@ class Dashboard extends Component {
       user: firebase.auth().currentUser
     }
     this.changeLoggedInStatus = this.changeLoggedInStatus.bind(this)
-    // this.notAddingContact = this.notAddingContact.bind(this)
     this.addingContactFn = this.addingContactFn.bind(this)
   }
 

@@ -38,7 +38,9 @@ h2 {
 
 .contactSubheaderText {
   text-align: center;
-  /* font-weight: 600; */
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 20px 0;
 }
 
 .loginFormInput {
@@ -102,7 +104,7 @@ h2 {
   /* align-items: flex-start; */
 }
 
-.submitButton, .editButton, .addContactButton, .deleteButton, .cancelButton {
+.submitButton, .editButton, .deleteButton, .cancelButton {
   margin: 10px 0 0 0;
   font-family: 'Niconne', cursive;
   font-size: 1.2rem;
@@ -121,6 +123,18 @@ h2 {
 .addContactButton {
   background-color: #A49DBF;
   color: black;
+  text-decoration: none;
+  font-family: 'Niconne', cursive;
+  font-size: 1.2rem;
+  align-self: center;
+  width: 33%;
+  min-width: 300px;
+  text-align: center;
+  padding: 10px;
+}
+
+a.addContactButton {
+  margin:0 0 20px 0;
 }
 
 .editButton, .deleteButton, .addContactButton {
