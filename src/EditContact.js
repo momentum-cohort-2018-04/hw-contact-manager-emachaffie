@@ -57,8 +57,8 @@ class EditContact extends Component {
   render () {
     return (
       <div>
-        <h2>Add a Contact</h2>
-        <p>You may add with the spell 'addendum contacto'. Muggles and those who have not passed Year 3 Incantations, please fill out this form.</p>
+        <h2>Edit Contact</h2>
+        {/* <p>You may add with the spell 'addendum contacto'. Muggles and those who have not passed Year 3 Incantations, please fill out this form.</p> */}
         <form type='submit' onSubmit={this.handleSubmit}>
         Name: <input type='text' name='name' onChange={this.handleChange} value={this.props.name} />
         Email: <input type='text' name='email' onChange={this.handleChange} value={this.props.email} />

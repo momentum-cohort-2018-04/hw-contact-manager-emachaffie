@@ -52,6 +52,16 @@ class AddContact extends Component {
   handleSubmit (event) {
     event.preventDefault()
     console.log('submitting')
+    if (this.state.name.length < 1) {
+      this.setState({
+        nameError: 'Please enter a name'
+      })
+    }
+    if (this.state.email.str.includes('@') === false) {
+      this.setState({
+        emailError: 'Must enter valid email address'
+      })
+    }
     const newId = uuid()
     const newContactList = database.ref('contacts/')
     const newContact = {
@@ -67,15 +77,6 @@ class AddContact extends Component {
     newContactList.push(newContact)
     this.props.history.push('/Contacts')
   }
-
-  // Example from site 
-  // function writeUserData(userId, name, email, imageUrl) {
-  //   firebase.database().ref('users/' + userId).set({
-  //     username: name,
-  //     email: email,
-  //     profile_picture : imageUrl
-  //   });
-  // }
 
   render () {
     return (
