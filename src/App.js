@@ -30,10 +30,10 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path='/' component={Dashboard} />
-          <Route exact path='/contacts' component={Contacts} />
-          <Route exact path='/add' component={AddContact} />
+          <Route path='/contacts' component={Contacts} />
+          <Route path='/add' component={AddContact} />
           <Route path='/edit/:id' render={(props) => <EditContact {...props} />} />
-          <Route exact path='/login' component={LoginPage} />
+          <Route path='/login' component={LoginPage} />
         </div>
       </Router>
     )

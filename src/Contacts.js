@@ -69,9 +69,8 @@ class Contacts extends Component {
               <p className='title'><span className='textSpan'>Job Title: </span>{contact.title}</p>
             </div>
             <div className='contactButtonDiv'>
-              <Link id={contact.id} to='/edit/{contact.id}' className='editButton'>Edit</Link>
-              <button className='editButton' // onClick=<EditContact {...props} />} />
-              >Edit</button>
+              {/* <Link id={contact.id} to='/edit/{contact.id}' className='editButton'>Edit</Link> */}
+              <button className='editButton' onClick={() => this.props.history.push('/edit/')}>Edit</button>
               <button className='deleteButton' id={contact.id} onClick={() => this.deleteContact(contact.id)}
               >Delete</button>
             </div>
